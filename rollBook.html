@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @keyframes animal{
+            from{border:50px dashed pink;}
+            to{border:50px dotted blue;}
+        }
+    </style>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script>
+        var names="";
+        var arr=[];
+        var n=0;
+        var docWidth=document.documentElement.clientWidth||document.body.clientWidth;
+        var docHeight=document.documentElement.clientHeight||document.body.clientHeight;
+        /*行为*/
+        function action(){
+            $("#addName").on("click",function(){
+                n++;
+                names+="["+$("#inputName").val()+"]";
+                arr.push($("#inputName").val());
+                $("#book").html(names);
+                $("#inputName").val("");
+                $("#warning").html("添加"+n+"条记录成功!");
+                $("#warning").css({color:"green"})
+            })
+            $("#finish").on("click",function(){
+                $("#header").slideUp();
+                $("#img1").slideDown();
+                console.log(arr)
+            })
+            $("#img1").on("click",function(){
+                $(this).fadeOut();
+                $("#body").slideDown();
+            })
+            $("#confirm").on("click",function(){
+                $(this).parent().fadeOut();
+                $("#img2").slideDown();
+            })
+            $("#img2").on("click",function(){
+                var randomNum=Math.floor(Math.random()*arr.length);
+                $("#footer").html(arr[randomNum]);
+                $("#footer").fadeIn();
+            })
+        }
+        /*样式*/
+        function objStyle(){
+            $("#top").width(docWidth);
+            $("#header").width(docWidth);
+            $("#header").css({textAlign:"center"});
+            $("#img1").width(docWidth);
+            $("#body").width(docWidth);
+            $("#confirm").width(docWidth);
+            $("#confirm").height("200px");
+            $("#confirm").css({fontSize:"140px",fontWeight:"bold",padding:0,lineHeight:"200px",textAlign:"center"});
+            $("#img2").width(docWidth);
+            $("#footer").width(docWidth);
+            $("#footer").height("600px");
+            $("#footer").css({fontSize:"300px",fontWeight:"bold",padding:0,lineHeight:"600px",textAlign:"center",border:"10px dashed black",
+                animation:"animal 0.5s infinite",transition:"1s"
+            });
+        }
+        /*页面加载..*/
+        $(function(){
+            action();
+            objStyle();
+        })
+    </script>
+</head>
+<body>
+<div id="main">
+    <img id="top" src="images/03.png">
+    <div id="header">
+        <span>往输入框内填写名字：</span>
+        <input placeholder="在此处输入名字.." id="inputName" type="text">
+        <button id="addName">添加名字</button>
+        <button id="finish">结束</button>
+        <p id="warning"></p>
+    </div>
+    <img style="display: none" id="img1" src="images/01.gif">
+    <div style="display: none" id="body">
+        <div id="book"></div>
+        <button id="confirm">确认</button>
+    </div>
+    <img style="display: none" id="img2" src="images/02.gif">
+    <div style="display: none" id="footer"></div>
+
+</div>
+</body>
+</html>
