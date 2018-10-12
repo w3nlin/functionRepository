@@ -23,9 +23,9 @@
             $("#addName").on("click",function(){
                 if($("#inputName").val().trim().length!=0){
                     n++;
-                    names+="["+$("#inputName").val().trim()+"]";
-                    arr.push($("#inputName").val());
-                    $("#book").html(names);
+                    names+="["+$("#inputName").val().trim()+"]、";
+                    arr.push($("#inputName").val().trim());
+                    $("#book").html(names.substring(0,names.length-1));
                     $("#inputName").val("");
                     $("#warning").html("添加"+n+"条记录成功!");
                     $("#warning").css({color:"green"});
@@ -39,6 +39,7 @@
                 }else{alert("请输入有效内容！")}
             })
             $("#finish").on("click",function(){
+
                 if(arr.length>1){
                     $("#header").slideUp();
                     $("#img1").slideDown();
