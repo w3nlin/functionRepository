@@ -15,6 +15,7 @@
         var names="";
         var arr=[];
         var arr1=[];
+
         var n=0;
         var docWidth=document.documentElement.clientWidth||document.body.clientWidth;
         var docHeight=document.documentElement.clientHeight||document.body.clientHeight;
@@ -23,9 +24,16 @@
             $("#inputName").on("focus",function(){$(this).css({textAlign:"center"})})
             $("#addName").on("click",function(){
                 if($("#inputName").val().trim().length!=0&&$("#inputName").val().trim().length<=5){
+                    for(var i=0;i<arr.length;i++){
+                        if(arr[i]==$("#inputName").val().trim()){
+                            alert("名字重复，请重新输入！");
+                            return;
+                        }
+                    }
                     n++;
                     arr1.push($("#inputName").val().trim().length);
                     names+="["+$("#inputName").val().trim()+"]、";
+
                     arr.push($("#inputName").val().trim());
                     $("#book").html(names.substring(0,names.length-1));
                     $("#inputName").val("");
