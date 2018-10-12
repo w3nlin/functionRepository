@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        div{
-            color: ;
-        }
         @keyframes animal{
             from{border:50px dashed pink;}
             to{border:50px dotted blue;}
         }
-        @keyframes colorChange{0%{background: green;}30%{background:blue;}60%{background:pink;}100%{background:none;}}
+        /*@keyframes colorChange{0%{background: green;}30%{background:blue;}60%{background:pink;}100%{background:none;}}*/
     </style>
     <script src="jquery-1.9.1.min.js"></script>
     <script>
@@ -42,9 +39,11 @@
                 }
             })
             $("#finish").on("click",function(){
-                $("#header").slideUp();
-                $("#img1").slideDown();
-                $(this).css({backgroundColor:"black",transition:"0.2s",color:"red"})
+                if(arr.length>1){
+                    $("#header").slideUp();
+                    $("#img1").slideDown();
+                    $(this).css({backgroundColor:"black",transition:"0.2s",color:"red"})
+                }
             })
             $("#img1").on("click",function(){
                 $(this).fadeOut();
@@ -55,10 +54,14 @@
                 $("#img2").slideDown();
             })
             $("#img2").on("click",function(){
+                $(this).attr("src","images/002.png");
                 var randomNum=Math.floor(Math.random()*arr.length);
                 $("#footer").html(arr[randomNum]);
                 $("#footer").css({boxSizing:"border-box"});
                 $("#footer").fadeIn();
+                setTimeout(function(){
+                    $("#img2").attr("src","images/02.gif");
+                },100)
             })
         }
         /*样式*/
@@ -80,9 +83,10 @@
                 padding:docWidth*0.4/4*0.1+"px",backgroundColor:"lightgrey"});
             $("#img1").width(docWidth);
             $("#body").width(docWidth);
+            $("#book").css({fontSize:"200px",})
             $("#confirm").width(docWidth);
             $("#confirm").height("200px");
-            $("#confirm").css({fontSize:"140px",fontWeight:"bold",padding:0,lineHeight:"200px",textAlign:"center"});
+            $("#confirm").css({fontSize:"160px",fontWeight:"bold",padding:0,lineHeight:"200px",textAlign:"center"});
             $("#img2").width(docWidth);
             $("#footer").width(docWidth);
             $("#footer").height("600px");
