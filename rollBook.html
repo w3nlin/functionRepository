@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
+        div{
+            color: ;
+        }
         @keyframes animal{
             from{border:50px dashed pink;}
             to{border:50px dotted blue;}
         }
+        @keyframes colorChange{0%{background: green;}30%{background:blue;}60%{background:pink;}100%{background:none;}}
     </style>
     <script src="jquery-1.9.1.min.js"></script>
     <script>
@@ -18,19 +22,29 @@
         var docHeight=document.documentElement.clientHeight||document.body.clientHeight;
         /*行为*/
         function action(){
+            $("#inputName").on("focus",function(){$(this).css({textAlign:"center"})})
             $("#addName").on("click",function(){
-                n++;
-                names+="["+$("#inputName").val()+"]";
-                arr.push($("#inputName").val());
-                $("#book").html(names);
-                $("#inputName").val("");
-                $("#warning").html("添加"+n+"条记录成功!");
-                $("#warning").css({color:"green"})
+                if($("#inputName").val().trim().length!=0){
+                    n++;
+                    names+="["+$("#inputName").val().trim()+"]";
+                    arr.push($("#inputName").val());
+                    $("#book").html(names);
+                    $("#inputName").val("");
+                    $("#warning").html("添加"+n+"条记录成功!");
+                    $("#warning").css({color:"green"});
+                    $(this).css({backgroundClip:"content-box",
+                        padding:docWidth*0.4/4*0.1+"px",transition:"0.2s",backgroundColor:"lightskyblue",color:"white"})
+
+                    setTimeout(function(){
+                        $("#addName").css({backgroundClip:"content-box",
+                            padding:docWidth*0.4/4*0.1+"px",transition:"0.2s",backgroundColor:"lightgrey",color:"black"})
+                    },200)
+                }
             })
             $("#finish").on("click",function(){
                 $("#header").slideUp();
                 $("#img1").slideDown();
-                console.log(arr)
+                $(this).css({backgroundColor:"black",transition:"0.2s",color:"red"})
             })
             $("#img1").on("click",function(){
                 $(this).fadeOut();
@@ -43,6 +57,7 @@
             $("#img2").on("click",function(){
                 var randomNum=Math.floor(Math.random()*arr.length);
                 $("#footer").html(arr[randomNum]);
+                $("#footer").css({boxSizing:"border-box"});
                 $("#footer").fadeIn();
             })
         }
@@ -51,6 +66,18 @@
             $("#top").width(docWidth);
             $("#header").width(docWidth);
             $("#header").css({textAlign:"center"});
+            $("#inputName").width(docWidth*0.8);
+            $("#inputName").height(docWidth*0.8/4);
+            $("#inputName").css({borderRadius:"50%",fontSize:docWidth*0.8/4*0.5+"px",});
+            $("#warning").css({fontSize:docWidth*0.4/4*0.8/2+"px"});
+            $("#addName").width(docWidth*0.4);
+            $("#addName").height(docWidth*0.4/4);
+            $("#addName").css({borderRadius:"50px",fontSize:docWidth*0.4/4*0.8+"px",lineHeight:docWidth*0.4/4+"px",backgroundClip:"content-box",
+            padding:docWidth*0.4/4*0.1+"px",backgroundColor:"lightgrey"});
+            $("#finish").width(docWidth*0.4);
+            $("#finish").height(docWidth*0.4/4);
+            $("#finish").css({borderRadius:"50px",fontSize:docWidth*0.4/4*0.8+"px",lineHeight:docWidth*0.4/4+"px",backgroundClip:"content-box",
+                padding:docWidth*0.4/4*0.1+"px",backgroundColor:"lightgrey"});
             $("#img1").width(docWidth);
             $("#body").width(docWidth);
             $("#confirm").width(docWidth);
@@ -74,11 +101,12 @@
 <div id="main">
     <img id="top" src="images/03.png">
     <div id="header">
-        <span>往输入框内填写名字：</span>
-        <input placeholder="在此处输入名字.." id="inputName" type="text">
+        <!--<span>往输入框内填写名字：</span>-->
+        <input placeholder="在此处输入名字.." id="inputName" type="text"><br/>
+        <p id="warning"></p>
         <button id="addName">添加名字</button>
         <button id="finish">结束</button>
-        <p id="warning"></p>
+
     </div>
     <img style="display: none" id="img1" src="images/01.gif">
     <div style="display: none" id="body">

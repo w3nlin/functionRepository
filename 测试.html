@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="jquery-1.9.1.min.js"></script>
+<script src="boomAndFocusEffect.js"></script>
+<script>
+    /*$(function(){
+
+        var imgArrImp1 = ["02.gif","02.gif"];  //定义存放图片的路径数组
+        var objStyle={"width":600,"height":420,"position":"fixed","top":200,"left":200,"right":0,"bottom":0};  //定义存放obj的样式json //top、left||right、bottom可写任意其二
+        boom($("div"),objStyle,6,6,imgArrImp1,2); //调用方法
+    })*/
+    window.onload=function(){
+
+        var oDiv=document.getElementsByTagName("div")[0];
+        var imgArrImp1 = ["02.gif","02.gif"];
+        var objStyle={"width":600,"height":420,"position":"fixed","top":200,"left":200,"right":0,"bottom":0};
+        boom(oDiv,objStyle,6,6,imgArrImp1,1);
+    }
+</script>
+<body>
+<!--<img src="images/02.gif">-->
+<div></div>
+</body>
+</html>
