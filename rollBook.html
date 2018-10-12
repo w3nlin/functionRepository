@@ -36,13 +36,15 @@
                         $("#addName").css({backgroundClip:"content-box",
                             padding:docWidth*0.4/4*0.1+"px",transition:"0.2s",backgroundColor:"lightgrey",color:"black"})
                     },200)
-                }
+                }else{alert("请输入有效内容！")}
             })
             $("#finish").on("click",function(){
                 if(arr.length>1){
                     $("#header").slideUp();
                     $("#img1").slideDown();
                     $(this).css({backgroundColor:"black",transition:"0.2s",color:"red"})
+                }else{
+                    alert("请输入至少两个或以上名字！")
                 }
             })
             $("#img1").on("click",function(){
