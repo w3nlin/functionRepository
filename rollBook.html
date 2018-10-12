@@ -54,14 +54,26 @@
                 $("#img2").slideDown();
             })
             $("#img2").on("click",function(){
+                $("#footer").css({textShadow:"",color:"black",backgroundColor:"white"});
                 $(this).attr("src","images/002.png");
                 var randomNum=Math.floor(Math.random()*arr.length);
-                $("#footer").html(arr[randomNum]);
+
                 $("#footer").css({boxSizing:"border-box"});
                 $("#footer").fadeIn();
+
                 setTimeout(function(){
                     $("#img2").attr("src","images/02.gif");
-                },500)
+                },2000);
+                var nn=0;
+                var timer=setInterval(function(){
+                    nn++;
+                    var arrRan=Math.floor(Math.random()*arr.length);
+                    $("#footer").html(arr[arrRan]);
+                    if(nn>20){clearInterval(timer)
+                        $("#footer").css({textShadow:"20px -20px 100px red",color:"yellow",backgroundColor:"black"});
+                    };
+                },100);
+
             })
         }
         /*样式*/
@@ -83,7 +95,7 @@
                 padding:docWidth*0.4/4*0.1+"px",backgroundColor:"lightgrey"});
             $("#img1").width(docWidth);
             $("#body").width(docWidth);
-            $("#book").css({fontSize:"200px",})
+            $("#book").css({fontSize:"120px",})
             $("#confirm").width(docWidth);
             $("#confirm").height("200px");
             $("#confirm").css({fontSize:"160px",fontWeight:"bold",padding:0,lineHeight:"200px",textAlign:"center"});
@@ -91,7 +103,7 @@
             $("#footer").width(docWidth);
             $("#footer").height("600px");
             $("#footer").css({fontSize:"300px",fontWeight:"bold",padding:0,lineHeight:"600px",textAlign:"center",border:"10px dashed black",
-                animation:"animal 0.5s infinite",transition:"1s"
+                animation:"animal 0.5s infinite",transition:"0.5s"
             });
         }
         /*页面加载..*/
