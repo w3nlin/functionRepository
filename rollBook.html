@@ -53,26 +53,31 @@
                 $(this).parent().fadeOut();
                 $("#img2").slideDown();
             })
+            var t_f1=true;
             $("#img2").on("click",function(){
-                $("#footer").css({textShadow:"",color:"black",backgroundColor:"white"});
-                $(this).attr("src","images/002.png");
-                var randomNum=Math.floor(Math.random()*arr.length);
+                if(t_f1){
+                    t_f1=false;
+                    $("#footer").css({textShadow:"",color:"black",backgroundColor:"white"});
+                    $(this).attr("src","images/002.png");
+                    var randomNum=Math.floor(Math.random()*arr.length);
 
-                $("#footer").css({boxSizing:"border-box"});
-                $("#footer").fadeIn();
+                    $("#footer").css({boxSizing:"border-box"});
+                    $("#footer").fadeIn();
 
-                setTimeout(function(){
-                    $("#img2").attr("src","images/02.gif");
-                },2000);
-                var nn=0;
-                var timer=setInterval(function(){
-                    nn++;
-                    var arrRan=Math.floor(Math.random()*arr.length);
-                    $("#footer").html(arr[arrRan]);
-                    if(nn>20){clearInterval(timer)
-                        $("#footer").css({textShadow:"20px -20px 100px red",color:"yellow",backgroundColor:"black"});
-                    };
-                },100);
+                    setTimeout(function(){
+                        $("#img2").attr("src","images/02.gif");
+                        t_f1=true;
+                    },2000);
+                    var vari=0;
+                    var timer=setInterval(function(){
+                        vari++;
+                        var arrRan=Math.floor(Math.random()*arr.length);
+                        $("#footer").html(arr[arrRan]);
+                        if(vari>20){clearInterval(timer)
+                            $("#footer").css({textShadow:"20px -20px 100px red",color:"yellow",backgroundColor:"black"});
+                        };
+                    },100);
+                }
 
             })
         }
