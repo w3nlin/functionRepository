@@ -5,7 +5,7 @@
     <title></title>
     <script>
         window.onload=function(){
-            document.addEventListener("touchstart",function(){alert("111")},false);
+            document.addEventListener("touchstart",function(e){alert(e.clientX+","+ e.clientY)},false);
         }
     </script>
 </head>
