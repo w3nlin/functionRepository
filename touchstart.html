@@ -9,7 +9,7 @@
                 var e=event.touches[0]||window.event;
                 alert(e.clientX+","+ e.clientY)},false);
         }*/
-        document.touchstart=function(event){
+        document.ontouchstart=function(event){
             var e=event.touches[0];
             alert(e.clientX);
         }}
