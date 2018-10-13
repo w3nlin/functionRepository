@@ -5,8 +5,8 @@
     <title></title>
     <script>
         window.onload=function(){
-            document.addEventListener("touchstart",function(e){
-                var e=e||window.event;
+            document.addEventListener("touchstart",function(evevt){
+                var e=event.touches[0]||window.event;
                 alert(e.clientX+","+ e.clientY)},false);
         }
     </script>
