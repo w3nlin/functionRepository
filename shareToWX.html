@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function(){
+            var oButton=document.getElementsByTagName("button");
+            oButton.onclick=function(){
+                shareToWX();
+            }
+            function shareToWX(){
+                var shareWeixin="http://s.jiathis.com/qrcode.php?url="+"";
+                window.open(shareWeixin,'_blank');
+            }
+
+        }
+    </script>
+</head>
+<body>
+<button>分享</button>
+</body>
+</html>
