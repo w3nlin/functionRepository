@@ -29,7 +29,7 @@
             position: absolute;
             top:0;
             left:0;
-          
+
             border: 10px groove white;
         }
         .divBox>div img,.mengban{
@@ -353,12 +353,12 @@
                 $("#div6").slideUp(500)
                 $("#div7").fadeOut(500);
 
-                $("#div8").delay(1000).fadeIn(500);
-                $("#div9").animate({left:windowClientWidth-(windowClientWidth*0.8)+"px"},1000);
+                $("#div8").delay(1500).fadeIn(500);
+                $("#div9").animate({left:windowClientWidth-(windowClientWidth*0.8),opacity:1},1500,"linear");
                 /*$("#div9").slideDown(500);*/
-                $("#div10").animate({left:0+"px"},1000);
+                $("#div10").animate({left:0+"px",opacity:1},1500,"linear");
                 /*$("#div10").slideDown(500);*/
-                $("#div11").delay(1000).fadeIn(500);
+                $("#div11").delay(1500).fadeIn(550);
             }
 
         }
@@ -378,8 +378,8 @@
 
 <div class="divBox">
     <div style="/*width: 120px;height:84px;*/display: none;" id="div8"><span class="mengban"></span><img src="images01/8.jpg"></div>
-    <div style="/*width: 120px;height:84px;*/display: none;" id="div9"><span class="mengban"></span><img src="images01/9.jpg"></div>
-    <div style="/*width: 120px;height:84px;*/display: none;" id="div10"><span class="mengban"></span><img src="images01/10.jpg"></div>
+    <div style="/*width: 120px;height:84px;*/opacity: 0;" id="div9"><span class="mengban"></span><img src="images01/9.jpg"></div>
+    <div style="/*width: 120px;height:84px;*/opacity: 0;" id="div10"><span class="mengban"></span><img src="images01/10.jpg"></div>
     <div style="/*width: 120px;height:84px;*/display: none;" id="div11"><span class="mengban"></span><img src="images01/11.jpg"></div>
 </div>
 
