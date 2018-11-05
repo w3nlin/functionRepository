@@ -88,24 +88,24 @@
             var obac=document.getElementById("bac");
             var oDiv=document.getElementsByClassName("divBox");
             /*设置第五版，5,6,7张图片的大小、位置*/
-            with(oDiv[4].style){
-                width=windowClientWidth*0.6+"px";
-                height=windowClientWidth*0.6*0.7+"px";
+            with(oDiv[4].children[0].style){
+                width=windowClientWidth*0.8+"px";
+                height=windowClientWidth*0.8*0.7+"px";
                 top=0;
                 left=0;
             }
-            with(oDiv[5].style){
-                width=windowClientWidth*0.6+"px";
-                height=windowClientWidth*0.6*0.75+"px";
-                left=Math.floor(windowClientWidth/2)-Math.floor(windowClientWidth*0.6/2)+"px";
-                top=Math.floor(windowClientHeight/2)-Math.floor(windowClientWidth*0.6*0.75/2)+"px";
+            with(oDiv[4].children[1].style){
+                width=windowClientWidth*0.8*0.75+"px";
+                height=windowClientWidth*0.8+"px";
+                left=Math.floor(windowClientWidth/2)-Math.floor(windowClientWidth*0.8*0.75/2)+"px";
+                top=Math.floor(windowClientHeight/2)-Math.floor(windowClientWidth*0.8/2)+"px";
 
             }
-            with(oDiv[6].style){
-                width=windowClientWidth*0.6+"px";
-                height=windowClientWidth*0.6*1.33+"px";
-                top=0;
-                left=0;
+            with(oDiv[4].children[2].style){
+                width=windowClientWidth*0.8+"px";
+                height=windowClientWidth*0.8*0.7+"px";
+                top=windowClientHeight-(windowClientWidth*0.8*0.7)+"px";
+                left=windowClientWidth-(windowClientWidth*0.8)+"px";
             }
             /*设置body宽高*/
             oBody.style.width=windowClientWidth+"px";
@@ -150,24 +150,28 @@
             }*/
 
             /*用鼠标测试*/
-            /*for(var j=0;j<oDiv.length;j++){
-                oDiv[j].index=j;
-                    oDiv[j].onclick=function(){ //向上
-                        if(this.index!=oDiv.length-1){
-                            this.style.top=-this.offsetHeight+"px";
-                            oDiv[this.index+1].style.top=0+"px";
-                        }
-                    }
-                        /!*oDiv[j].ondblclick=function(){
-                            if(this.index!=0){
-                        this.style.top=this.offsetHeight+"px";
-                        oDiv[this.index-1].style.top=0+"px";
-                    }
-                }*!/
-            }*/
+            for(var j=0;j<oDiv.length;j++){
+             oDiv[j].index=j;
+             oDiv[j].onclick=function(){ //向上
+             if(this.index!=oDiv.length-1){
+                 if(this.index==0){photo2();}
+                 if(this.index==1){photo3();}
+                 if(this.index==2){photo4();}
+                 if(this.index==3){photo5();}
+             this.style.top=-this.offsetHeight+"px";
+             oDiv[this.index+1].style.top=0+"px";
+             }
+             }
+             /*oDiv[j].ondblclick=function(){
+             if(this.index!=0){
+             this.style.top=this.offsetHeight+"px";
+             oDiv[this.index-1].style.top=0+"px";
+             }
+             }*/
+             }
             photo1();
             /*手机可行，正式代码在此*/
-            for(var j=0;j<oDiv.length;j++){
+            /*for(var j=0;j<oDiv.length;j++){
                 oDiv[j].index=j;
                 oDiv[j].addEventListener("touchstart",function(event){
                     var e=event.touches[0]||window.event;
@@ -183,7 +187,7 @@
                             return;
                         }
 
-                        /*alert("向上滑动..");*/
+                        /!*alert("向上滑动..");*!/
                         if(this.index==0){photo2();}
                         if(this.index==1){photo3();}
                         if(this.index==2){photo4();}
@@ -196,7 +200,7 @@
                             alert("已经不能再向下滑动了");
                             return;
                         }
-                        /*alert("向下滑动..");*/
+                        /!*alert("向下滑动..");*!/
                         if(this.index==1){photo1();}
                         if(this.index==2){photo2();}
                         if(this.index==3){photo3();}
@@ -206,7 +210,7 @@
                         oDiv[this.index-1].style.top=0+"px";
                     }
                 },false);
-            }
+            }*/
             /*初始加载调用第一张相片特效*/
             /*photo1();*/
             /*第一张相片特效*/
@@ -304,8 +308,10 @@
             /*第四板相片特效*/
             function photo5(){
                 $("#div5").slideDown(500);
-                $("#div7").slideDown(1000);
-                $("#div6").fadeIn(1500);
+
+                $("#div7").delay(500).slideDown(500);
+
+                $("#div6").delay(1000).fadeIn(1500);
             }
 
         }
@@ -318,9 +324,9 @@
 <div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div3"><span class="mengban"></span><img src="images01/3.jpg"></div></div>
 <div class="divBox"><div style="width: 120px;height:160px;display: block;" id="div4"><span class="mengban"></span><img src="images01/4.jpg"></div></div>
 <div class="divBox">
-    <div style="width: 120px;height:84px;display: none;" id="div5"><span class="mengban"></span><img src="images01/5.jpg"></div>
-    <div style="width: 120px;height:160px;display: none;" id="div6"><span class="mengban"></span><img src="images01/6.jpg"></div>
-    <div style="width: 160px;height:120px;display: none;" id="div7"><span class="mengban"></span><img src="images01/7.jpg"></div>
+    <div style="/*width: 120px;height:84px;*/display: none;" id="div5"><span class="mengban"></span><img src="images01/5.jpg"></div>
+    <div style="/*width: 120px;height:160px;*/display: none;" id="div6"><span class="mengban"></span><img src="images01/6.jpg"></div>
+    <div style="/*width: 160px;height:120px;*/display: none;" id="div7"><span class="mengban"></span><img src="images01/7.jpg"></div>
 </div>
 <!--<div class="divBox"></div>
 <div class="divBox"></div>-->
