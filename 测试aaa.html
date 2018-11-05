@@ -114,26 +114,26 @@
             with(oDiv[5].children[0].style){
                 width=windowClientWidth*0.8+"px";
                 height=windowClientWidth*0.8*0.7+"px";
-                top=0;
+                top=0-windowClientWidth*0.8*0.7*0.2;
                 left=0;
             }
             with(oDiv[5].children[1].style){
                 width=windowClientWidth*0.8+"px";
                 height=windowClientWidth*0.8*0.7+"px";
                 left=windowClientWidth+"px";
-                top=windowClientWidth*0.8*0.7+"px";
+                top=windowClientWidth*0.8*0.7-windowClientWidth*0.8*0.7*0.2+"px";
             }
             with(oDiv[5].children[2].style){
                 width=windowClientWidth*0.8+"px";
                 height=windowClientWidth*0.8*0.7+"px";
-                top=windowClientWidth*0.8*0.7*2+"px";
+                top=windowClientWidth*0.8*0.7*2-windowClientWidth*0.8*0.7*0.2+"px";
                 left=-windowClientWidth*0.8+"px";
 
             }
             with(oDiv[5].children[3].style){
                 width=windowClientWidth*0.8+"px";
                 height=windowClientWidth*0.8*0.7+"px";
-                top=windowClientHeight-(windowClientWidth*0.8*0.7)+"px";
+                top=windowClientHeight-(windowClientWidth*0.8*0.7)-windowClientWidth*0.8*0.7*0.2+"px";
                 left=windowClientWidth-(windowClientWidth*0.8)+"px";
             }
             /*设置body宽高*/
