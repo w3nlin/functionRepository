@@ -40,12 +40,13 @@
                 oDiv[i].addEventListener("touchstart",function(event){
                     var e=event.touches[0]||window.event;
                     startY=e.clientY;
+                    oDiv[i].innerHTML=startY+"+"+endY;
                     e.preventDefault();
                 },false);
                 oDiv[i].addEventListener("touchend",function(event){
                     var e=event.touches[0]||window.event;
                     endY=e.clientY;
-
+                    oDiv[i].innerHTML=startY+"+"+endY;
                     if(endY>startY){
                         alert("向下滑动");
                     }else{alert("向上滑动");}
