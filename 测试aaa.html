@@ -125,29 +125,25 @@
                     }
                 },false);
             }*/
-            /*用键盘测试*/
-            /*document.onkeydown=function(e){
-                var e=e||window.event;
-                if(e.keyCode==87){ //向上
-                }
-                if(e.keyCode==83){//向下
-                }
-            }*/
+
+            /*用鼠标测试*/
             /*for(var j=0;j<oDiv.length;j++){
                 oDiv[j].index=j;
-                if(j!=oDiv.length-1){
-                    oDiv[j].onclick=function(){
-                        this.style.top=-this.offsetHeight+"px";
-                        oDiv[this.index+1].style.top=0+"px";
+                    oDiv[j].onclick=function(){ //向上
+                        if(this.index!=oDiv.length-1){
+                            this.style.top=-this.offsetHeight+"px";
+                            oDiv[this.index+1].style.top=0+"px";
+                        }
                     }
-                }
-                    if(j!=0){
-                        oDiv[j].ondblclick=function(){
+                        /!*oDiv[j].ondblclick=function(){
+                            if(this.index!=0){
                         this.style.top=this.offsetHeight+"px";
                         oDiv[this.index-1].style.top=0+"px";
                     }
-                }
+                }*!/
             }*/
+            photo1();
+            /*手机可行，正式代码在此*/
             for(var j=0;j<oDiv.length;j++){
                 oDiv[j].index=j;
                 oDiv[j].addEventListener("touchstart",function(event){
@@ -163,7 +159,9 @@
                             alert("已经不能再向上滑动了");
                             return;
                         }
+
                         alert("向上滑动..");
+                        if(this.index==0){photo2();}
                         this.style.top=-this.offsetHeight+"px";
                         oDiv[this.index+1].style.top=0+"px";
                     }
@@ -173,6 +171,8 @@
                             return;
                         }
                         alert("向下滑动..");
+                        if(this.index==1){photo1();}
+                        if(this.index==2){photo2();}
                         this.style.top=this.offsetHeight+"px";
                         oDiv[this.index-1].style.top=0+"px";
                     }
