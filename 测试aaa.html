@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no">
     <style>
+        *{
+            box-sizing: border-box;
+        }
         html,body{
             position:fixed;
             overflow-y:hidden;
@@ -13,29 +16,31 @@
             margin:0;
             position:relative;
         }
-        div{
+        #div1{
+            text-align: center;
             position: absolute;
             top:0;
             left:0;
             transition:1s;
+            border: 10px groove white;
         }
-        div img{
-            margin: 10%;
+        #div1 img,.mengban{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #div1 img{
+            margin-top:7.5% ;
+            margin-left:10% ;
             width: 80%;
             height: 80%;
         }
-        div .mengban{
-            background: white;
-            opacity:0.2;
-        }
 
         .mengban{
-            display: block;
+            background:black;
+            /*opacity:0.2;*/
             width: 100%;
             height:100%;
-            position: absolute;
-            top:0;
-            left:0;
         }
     </style>
     <title></title>
@@ -49,8 +54,9 @@
             var startY=0;
             var endX=0;
             var endY=0;
-            var w=0;
-            var h=0;
+            var w=120;
+            var h=84;
+            var n=0;
             var timer=null;
             /*获取元素*/
             var oBody=document.getElementsByTagName("body")[0];
@@ -83,7 +89,6 @@
                     if(endY>startY){
                         alert("向下滑动");
                     }else if(endY<startY){alert("向上滑动");
-                        alert(this);
                         this.style.top=-this.offsetHeight+"px";
                     }
                 },false);
@@ -92,6 +97,7 @@
             timer=setInterval(function(){
                 w+=10;
                 h+=7;
+                n+=1;
                 if(w>=windowClientWidth){
                     clearInterval(timer);
                 }
@@ -99,6 +105,8 @@
                     display:"block",
                     width:w+"px",
                     height:h+"px",
+                    lineHeight:h+"px",
+                    border: ""+n+"px groove white",
                     left:Math.floor(windowClientWidth/2)-Math.floor(w/2)+"px",
                     top:Math.floor(windowClientHeight/2)-Math.floor(h/2)+"px",})
             },30);
@@ -108,7 +116,7 @@
 </head>
 <body>
 <img id="bac" src="images01/bac1.jpg">
-<div style="width: 0;height:100%;border:5px solid red;display: none;" id="div1"><img src="images01/1.jpg"><!--<span class="mengban"></span>--></div>
+<div style="width: 120px;height:84px;display: none;" id="div1"><span class="mengban"></span><img src="images01/1.jpg"></div>
 <div style="width: 100%;height:100%" id="div2">bb</div>
 </body>
 </html>
