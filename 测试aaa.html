@@ -371,7 +371,27 @@
                 $("#div9").animate({left:windowClientWidth,opacity:0},500);
                 $("#div10").animate({left:-windowClientWidth*0.8,opacity:0},500);
                 $("#div11").fadeOut(500);
-                photo1();
+
+                clearInterval(timer);
+                var w12=120;
+                var h12=84;
+                var n12=0;
+                timer=setInterval(function(){
+                    w12+=10;
+                    h12+=7;
+                    n12+=1;
+                    if(w12>=windowClientWidth){
+                        clearInterval(timer);
+                    }
+                    $("#div12").css({
+                        display:"block",
+                        width:w12+"px",
+                        height:h12+"px",
+                        lineHeight:h12+"px",
+                        border: ""+n12+"px groove white",
+                        left:Math.floor(windowClientWidth/2)-Math.floor(w12/2)+"px",
+                        top:Math.floor(windowClientHeight/2)-Math.floor(h12/2)+"px",})
+                },30);
             }
 
         }
