@@ -87,8 +87,26 @@
             var oBody=document.getElementsByTagName("body")[0];
             var obac=document.getElementById("bac");
             var oDiv=document.getElementsByClassName("divBox");
-            var oDiv1=document.getElementById("div1");
-            var oDiv2=document.getElementById("div2");
+            /*设置第五版，5,6,7张图片的大小、位置*/
+            with(oDiv[4].style){
+                width=windowClientWidth*0.6+"px";
+                height=windowClientWidth*0.6*0.7+"px";
+                top=0;
+                left=0;
+            }
+            with(oDiv[5].style){
+                width=windowClientWidth*0.6+"px";
+                height=windowClientWidth*0.6*0.75+"px";
+                left=Math.floor(windowClientWidth/2)-Math.floor(windowClientWidth*0.6/2)+"px";
+                top=Math.floor(windowClientHeight/2)-Math.floor(windowClientWidth*0.6*0.75/2)+"px";
+
+            }
+            with(oDiv[6].style){
+                width=windowClientWidth*0.6+"px";
+                height=windowClientWidth*0.6*1.33+"px";
+                top=0;
+                left=0;
+            }
             /*设置body宽高*/
             oBody.style.width=windowClientWidth+"px";
             oBody.style.height=windowClientHeight+"px";
@@ -281,6 +299,12 @@
                         top:Math.floor(windowClientHeight/2)-Math.floor(h4/2)+"px",})
                 },30);
             }
+            /*第四板相片特效*/
+            function photo5(){
+                $("#div5").slideDown(500);
+                $("#div7").slideDown(1000);
+                $("#div6").fadeIn(1500);
+            }
 
         }
     </script>
@@ -291,9 +315,13 @@
 <div class="divBox"><div style="width: 60px;height:80px;display: block;" id="div2"><span class="mengban"></span><img src="images01/2.jpg"></div></div>
 <div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div3"><span class="mengban"></span><img src="images01/3.jpg"></div></div>
 <div class="divBox"><div style="width: 120px;height:160px;display: block;" id="div4"><span class="mengban"></span><img src="images01/4.jpg"></div></div>
-<div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div5"><span class="mengban"></span><img src="images01/5.jpg"></div></div>
-<div class="divBox"><div style="width: 120px;height:160px;display: block;" id="div6"><span class="mengban"></span><img src="images01/6.jpg"></div></div>
-<div class="divBox"><div style="width: 160px;height:120px;display: block;" id="div7"><span class="mengban"></span><img src="images01/7.jpg"></div></div>
+<div class="divBox">
+    <div style="width: 120px;height:84px;display: none;" id="div5"><span class="mengban"></span><img src="images01/5.jpg"></div>
+    <div style="width: 120px;height:160px;display: none;" id="div6"><span class="mengban"></span><img src="images01/6.jpg"></div>
+    <div style="width: 160px;height:120px;display: none;" id="div7"><span class="mengban"></span><img src="images01/7.jpg"></div>
+</div>
+<!--<div class="divBox"></div>
+<div class="divBox"></div>-->
 <div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div8"><span class="mengban"></span><img src="images01/8.jpg"></div></div>
 <div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div9"><span class="mengban"></span><img src="images01/9.jpg"></div></div>
 <div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div10"><span class="mengban"></span><img src="images01/10.jpg"></div></div>
