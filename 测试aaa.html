@@ -44,12 +44,12 @@
                     e.preventDefault();
                 },false);
                 oDiv[i].addEventListener("touchend",function(event){
-                    var e=event.touches[0]||window.event;
+                    var e=event.changedTouches[0]||window.event;
                     endY=e.clientY;
                     alert(startY+"+"+endY);
-                    /*if(endY>startY){
+                    if(endY>startY){
                         alert("向下滑动");
-                    }else{alert("向上滑动");}*/
+                    }else if(endY<startY){alert("向上滑动");}
                 },false);
             }
 
