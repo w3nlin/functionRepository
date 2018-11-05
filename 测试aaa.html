@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no">
+    <style>
+        body{
+            padding: 0;
+            margin:0;
+            position:relative;
+        }
+        div{
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+    <title></title>
+    <script>
+        window.onload=function(){
+            var oBody=document.getElementsByTagName("body")[0];
+            oBody.style.width=document.documentElement.clientWidth+"px"||document.body.clientWidth+"px";
+            oBody.style.height=document.documentElement.clientHeight+"px"||document.body.clientHeight+"px";
+            var oDiv=document.getElementsByTagName("div");
+            var oDiv1=document.getElementById("div1");
+            var oDiv2=document.getElementById("div2");
+            var startX=0;
+            var startY=0;
+            var endX=0;
+            var endY=0;
+            for(var i=0;i<oDiv.length;i++){
+                oDiv[i].index=i;
+                oDiv[i].addEventListener("touchstart",function(event){
+                    var e=event.touches[0]||window.event;
+                    startY=e.clientY;
+                },false);
+                oDiv[i].addEventListener("touchend",function(event){
+                    var e=event.touches[0]||window.event;
+                    endY=e.clientY;
+                    if(endY>startY){
+                        alert("向下滑动");
+                    }else{alert("向上滑动");}
+                },false);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div style="background: blue;width: 100%;height:100%" id="div1">aaa</div>
+<div style="background: red;width: 100%;height:100%" id="div2">bbb</div>
+</body>
+</html>
