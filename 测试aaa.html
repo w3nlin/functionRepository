@@ -29,6 +29,7 @@
             position: absolute;
             top:0;
             left:0;
+            transition:1s;
             border: 10px groove white;
         }
         .divBox>div img,.mengban{
@@ -352,12 +353,12 @@
                 $("#div6").slideUp(500)
                 $("#div7").fadeOut(500);
 
-                $("#div8").delay(500).fadeIn(500);
+                $("#div8").delay(1000).fadeIn(500);
                 $("#div9").animate({left:windowClientWidth-(windowClientWidth*0.8)+"px"},1000);
-                $("#div9").slideDown(500);
+                /*$("#div9").slideDown(500);*/
                 $("#div10").animate({left:0+"px"},1000);
-                $("#div10").slideDown(500);
-                $("#div11").delay(500).fadeIn(500);
+                /*$("#div10").slideDown(500);*/
+                $("#div11").delay(1000).fadeIn(500);
             }
 
         }
