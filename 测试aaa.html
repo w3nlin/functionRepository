@@ -78,6 +78,10 @@
             var h2=80;
             var n2=0;*/
             var timer1=null;
+            var timer2=null;
+            var timer3=null;
+            var timer4=null;
+            var timer5=null;
             /*获取元素*/
             var oBody=document.getElementsByTagName("body")[0];
             var obac=document.getElementById("bac");
@@ -222,6 +226,28 @@
                         border: ""+n2+"px groove white",
                         left:Math.floor(windowClientWidth/2)-Math.floor(w2/2)+"px",
                         top:Math.floor(windowClientHeight/2)-Math.floor(h2/2)+"px",})
+                },30);
+            }
+            /*第三张相片特效*/
+            function photo3(){
+                var w3=120;
+                var h3=84;
+                var n3=0;
+                timer3=setInterval(function(){
+                    w3+=10;
+                    h3+=7;
+                    n3+=1;
+                    if(w3>=windowClientWidth){
+                        clearInterval(timer3);
+                    }
+                    $("#div3").css({
+                        display:"block",
+                        width:w3+"px",
+                        height:h3+"px",
+                        lineHeight:h3+"px",
+                        border: ""+n3+"px groove white",
+                        left:Math.floor(windowClientWidth/2)-Math.floor(w3/2)+"px",
+                        top:Math.floor(windowClientHeight/2)-Math.floor(h3/2)+"px",})
                 },30);
             }
 
