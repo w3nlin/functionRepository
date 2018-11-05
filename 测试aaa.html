@@ -109,6 +109,32 @@
                 left=windowClientWidth-(windowClientWidth*0.8)+"px";
                 zIndex=8;
             }
+            /*设置第五版，8,9,10,11张图片的大小、位置*/
+            with(oDiv[5].children[0].style){
+                width=windowClientWidth*0.8+"px";
+                height=windowClientWidth*0.8*0.7+"px";
+                top=0;
+                left=0;
+            }
+            with(oDiv[5].children[1].style){
+                width=windowClientWidth*0.8+"px";
+                height=windowClientWidth*0.8*0.7+"px";
+                left=windowClientWidth+"px";
+                top=windowClientWidth*0.8*0.7+"px";
+            }
+            with(oDiv[5].children[2].style){
+                width=windowClientWidth*0.8+"px";
+                height=windowClientWidth*0.8*0.7+"px";
+                top=windowClientWidth*0.8*0.7*2+"px";
+                left=-windowClientWidth*0.8+"px";
+
+            }
+            with(oDiv[5].children[3].style){
+                width=windowClientWidth*0.8+"px";
+                height=windowClientWidth*0.8*0.7+"px";
+                top=windowClientHeight-(windowClientWidth*0.8*0.7)+"px";
+                left=windowClientWidth-(windowClientWidth*0.8)+"px";
+            }
             /*设置body宽高*/
             oBody.style.width=windowClientWidth+"px";
             oBody.style.height=windowClientHeight+"px";
@@ -194,6 +220,7 @@
                         if(this.index==1){photo3();}
                         if(this.index==2){photo4();}
                         if(this.index==3){photo5();}
+                        if(this.index==4){photo6();}
                         this.style.top=-this.offsetHeight+"px";
                         oDiv[this.index+1].style.top=0+"px";
                     }
@@ -208,6 +235,7 @@
                         if(this.index==3){photo3();}
                         if(this.index==4){photo4();}
                         if(this.index==5){photo5();}
+                        if(this.index==6){photo6();}
                         this.style.top=this.offsetHeight+"px";
                         oDiv[this.index-1].style.top=0+"px";
                     }
@@ -323,6 +351,13 @@
                 $("#div5").slideUp(500);
                 $("#div6").slideUp(500)
                 $("#div7").fadeOut(500);
+
+                $("#div8").delay(500).fadeIn(500);
+                $("#div9").animate({left:windowClientWidth-(windowClientWidth*0.8)+"px"});
+                $("#div9").slideDown(500);
+                $("#div10").animate({left:0+"px"});
+                $("#div10").slideDown(500);
+                $("#div11").delay(500).fadeIn(500);
             }
 
         }
@@ -339,12 +374,14 @@
     <div style="/*width: 120px;height:160px;*/display: none;" id="div6"><span class="mengban"></span><img src="images01/6.jpg"></div>
     <div style="/*width: 160px;height:120px;*/display: none;" id="div7"><span class="mengban"></span><img src="images01/7.jpg"></div>
 </div>
-<!--<div class="divBox"></div>
-<div class="divBox"></div>-->
-<div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div8"><span class="mengban"></span><img src="images01/8.jpg"></div></div>
-<div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div9"><span class="mengban"></span><img src="images01/9.jpg"></div></div>
-<div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div10"><span class="mengban"></span><img src="images01/10.jpg"></div></div>
-<div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div11"><span class="mengban"></span><img src="images01/11.jpg"></div></div>
+
+<div class="divBox">
+    <div style="/*width: 120px;height:84px;*/display: none;" id="div8"><span class="mengban"></span><img src="images01/8.jpg"></div>
+    <div style="/*width: 120px;height:84px;*/display: none;" id="div9"><span class="mengban"></span><img src="images01/9.jpg"></div>
+    <div style="/*width: 120px;height:84px;*/display: none;" id="div10"><span class="mengban"></span><img src="images01/10.jpg"></div>
+    <div style="/*width: 120px;height:84px;*/display: none;" id="div11"><span class="mengban"></span><img src="images01/11.jpg"></div>
+</div>
+
 <div class="divBox"><div style="width: 120px;height:84px;display: block;" id="div12"><span class="mengban"></span><img src="images01/12.jpg"></div></div>
 </body>
 </html>
