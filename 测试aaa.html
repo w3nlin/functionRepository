@@ -7,10 +7,10 @@
         *{
             box-sizing: border-box;
         }
-        /*html,body{
+        html,body{
             position:fixed;
             overflow-y:hidden;
-        }*/
+        }
         body{
             padding: 0;
             margin:0;
@@ -158,19 +158,23 @@
                 oDiv[j].addEventListener("touchend",function(event){
                     var e=event.changedTouches[0]||window.event;
                     endY=e.clientY;
-                    if(j!=oDiv.length-1){
-                        if(endY<startY){
-                            alert("向上滑动");
-                            this.style.top=-this.offsetHeight+"px";
-                            oDiv[this.index+1].style.top=0+"px";
+                    if(endY<startY){
+                        if(j==oDiv.length-1){
+                            alert("已经不能再向上滑动了");
+                            return;
                         }
+                        alert("向上滑动");
+                        this.style.top=-this.offsetHeight+"px";
+                        oDiv[this.index+1].style.top=0+"px";
                     }
-                    if(j!=0){
-                        if(endY>startY){
-                            alert("向下滑动");
-                            this.style.top=this.offsetHeight+"px";
-                            oDiv[this.index-1].style.top=0+"px";
+                    if(endY>startY){
+                        if(j==0){
+                            alert("已经不能再向下滑动了");
+                            return;
                         }
+                        alert("向下滑动");
+                        this.style.top=this.offsetHeight+"px";
+                        oDiv[this.index-1].style.top=0+"px";
                     }
                 },false);
             }
