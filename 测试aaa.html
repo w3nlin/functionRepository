@@ -71,12 +71,12 @@
             var startY=0;
             var endX=0;
             var endY=0;
-            var w1=120;
+            /*var w1=120;
             var h1=84;
             var n1=0;
             var w2=60;
             var h2=80;
-            var n2=0;
+            var n2=0;*/
             var timer1=null;
             /*获取元素*/
             var oBody=document.getElementsByTagName("body")[0];
@@ -182,6 +182,9 @@
             /*photo1();*/
             /*第一张相片特效*/
             function photo1(){
+                var w1=120;
+                var h1=84;
+                var n1=0;
                 timer1=setInterval(function(){
                     w1+=10;
                     h1+=7;
@@ -201,6 +204,9 @@
             }
             /*第二张相片特效*/
             function photo2(){
+                var w2=60;
+                var h2=80;
+                var n2=0;
                 timer2=setInterval(function(){
                     w2+=6;
                     h2+=8;
