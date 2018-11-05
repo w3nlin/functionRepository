@@ -164,9 +164,10 @@
                             return;
                         }
 
-                        alert("向上滑动..");
+                        /*alert("向上滑动..");*/
                         if(this.index==0){photo2();}
                         if(this.index==1){photo3();}
+                        if(this.index==2){photo4();}
                         this.style.top=-this.offsetHeight+"px";
                         oDiv[this.index+1].style.top=0+"px";
                     }
@@ -175,10 +176,11 @@
                             alert("已经不能再向下滑动了");
                             return;
                         }
-                        alert("向下滑动..");
+                        /*alert("向下滑动..");*/
                         if(this.index==1){photo1();}
                         if(this.index==2){photo2();}
                         if(this.index==3){photo3();}
+                        if(this.index==4){photo4();}
                         this.style.top=this.offsetHeight+"px";
                         oDiv[this.index-1].style.top=0+"px";
                     }
@@ -250,6 +252,28 @@
                         border: ""+n3+"px groove white",
                         left:Math.floor(windowClientWidth/2)-Math.floor(w3/2)+"px",
                         top:Math.floor(windowClientHeight/2)-Math.floor(h3/2)+"px",})
+                },30);
+            }
+            /*第三张相片特效*/
+            function photo4(){
+                var w4=120;
+                var h4=160;
+                var n4=0;
+                timer4=setInterval(function(){
+                    w4+=9;
+                    h4+=12;
+                    n4+=1;
+                    if(w4>=windowClientWidth){
+                        clearInterval(timer4);
+                    }
+                    $("#div4").css({
+                        display:"block",
+                        width:w4+"px",
+                        height:h4+"px",
+                        lineHeight:h4+"px",
+                        border: ""+n4+"px groove white",
+                        left:Math.floor(windowClientWidth/2)-Math.floor(w4/2)+"px",
+                        top:Math.floor(windowClientHeight/2)-Math.floor(h4/2)+"px",})
                 },30);
             }
 
