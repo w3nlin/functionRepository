@@ -77,11 +77,11 @@
             var w2=60;
             var h2=80;
             var n2=0;*/
-            var timer1=null;
-            var timer2=null;
+            var timer=null;
+            /*var timer2=null;
             var timer3=null;
             var timer4=null;
-            var timer5=null;
+            var timer5=null;*/
             /*获取元素*/
             var oBody=document.getElementsByTagName("body")[0];
             var obac=document.getElementById("bac");
@@ -190,15 +190,16 @@
             /*photo1();*/
             /*第一张相片特效*/
             function photo1(){
+                clearInterval(timer);
                 var w1=120;
                 var h1=84;
                 var n1=0;
-                timer1=setInterval(function(){
+                timer=setInterval(function(){
                     w1+=10;
                     h1+=7;
                     n1+=1;
                     if(w1>=windowClientWidth){
-                        clearInterval(timer1);
+                        clearInterval(timer);
                     }
                     $("#div1").css({
                         display:"block",
@@ -212,15 +213,16 @@
             }
             /*第二张相片特效*/
             function photo2(){
+                clearInterval(timer);
                 var w2=60;
                 var h2=80;
                 var n2=0;
-                timer2=setInterval(function(){
+                timer=setInterval(function(){
                     w2+=6;
                     h2+=8;
                     n2+=1;
                     if(w2>=windowClientWidth){
-                        clearInterval(timer2);
+                        clearInterval(timer);
                     }
                     $("#div2").css({
                         display:"block",
@@ -234,15 +236,16 @@
             }
             /*第三张相片特效*/
             function photo3(){
+                clearInterval(timer);
                 var w3=120;
                 var h3=84;
                 var n3=0;
-                timer3=setInterval(function(){
+                timer=setInterval(function(){
                     w3+=10;
                     h3+=7;
                     n3+=1;
                     if(w3>=windowClientWidth){
-                        clearInterval(timer3);
+                        clearInterval(timer);
                     }
                     $("#div3").css({
                         display:"block",
@@ -254,17 +257,18 @@
                         top:Math.floor(windowClientHeight/2)-Math.floor(h3/2)+"px",})
                 },30);
             }
-            /*第三张相片特效*/
+            /*第四张相片特效*/
             function photo4(){
+                clearInterval(timer);
                 var w4=120;
                 var h4=160;
                 var n4=0;
-                timer4=setInterval(function(){
+                timer=setInterval(function(){
                     w4+=9;
                     h4+=12;
                     n4+=1;
                     if(w4>=windowClientWidth){
-                        clearInterval(timer4);
+                        clearInterval(timer);
                     }
                     $("#div4").css({
                         display:"block",
