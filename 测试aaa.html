@@ -17,6 +17,7 @@
             position: absolute;
             top:0;
             left:0;
+            transition:1s;
         }
     </style>
     <title></title>
@@ -46,10 +47,12 @@
                 oDiv[i].addEventListener("touchend",function(event){
                     var e=event.changedTouches[0]||window.event;
                     endY=e.clientY;
-                    alert(startY+"+"+endY);
                     if(endY>startY){
                         alert("向下滑动");
-                    }else if(endY<startY){alert("向上滑动");}
+                    }else if(endY<startY){alert("向上滑动");
+                        alert(this);
+                        this.style.top=-this.offsetHeight+"px";
+                    }
                 },false);
             }
 
@@ -57,7 +60,7 @@
     </script>
 </head>
 <body>
-<div style="background: blue;width: 100%;height:100%" id="div1">aaa000111</div>
-<div style="background: red;width: 100%;height:100%" id="div2">bbb000111</div>
+<div style="background: blue;width: 100%;height:100%" id="div1">aaa0</div>
+<div style="background: red;width: 100%;height:100%" id="div2">bbb0</div>
 </body>
 </html>
