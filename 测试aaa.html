@@ -222,6 +222,7 @@
                         if(this.index==2){photo4();}
                         if(this.index==3){photo5();}
                         if(this.index==4){photo6();}
+                        if(this.index==5){photo7();}
                         this.style.top=-this.offsetHeight+"px";
                         oDiv[this.index+1].style.top=0+"px";
                     }
@@ -237,6 +238,7 @@
                         if(this.index==4){photo4();}
                         if(this.index==5){photo5();}
                         if(this.index==6){photo6();}
+                        if(this.index==7){photo7();}
                         this.style.top=this.offsetHeight+"px";
                         oDiv[this.index-1].style.top=0+"px";
                     }
@@ -339,15 +341,20 @@
                         top:Math.floor(windowClientHeight/2)-Math.floor(h4/2)+"px",});
                 },30);
             }
-            /*第四板相片特效*/
+            /*第5板相片特效*/
             function photo5(){
                 $("#div5").slideDown(500);
 
                 $("#div7").delay(500).slideDown(500);
 
                 $("#div6").delay(1000).fadeIn(1500);
+
+                $("#div8").fadeOut(500);
+                $("#div9").animate({left:windowClientWidth,opacity:0},500);
+                $("#div10").animate({left:-windowClientWidth*0.8,opacity:0},500);
+                $("#div11").fadeOut(500);
             }
-            /*第5板相片特效*/
+            /*第6板相片特效*/
             function photo6(){
                 $("#div5").slideUp(500);
                 $("#div6").slideUp(500)
@@ -355,10 +362,15 @@
 
                 $("#div8").delay(1500).fadeIn(500);
                 $("#div9").animate({left:windowClientWidth-(windowClientWidth*0.8),opacity:1},1500,"linear");
-                /*$("#div9").slideDown(500);*/
                 $("#div10").animate({left:0+"px",opacity:1},1500,"linear");
-                /*$("#div10").slideDown(500);*/
-                $("#div11").delay(1500).fadeIn(550);
+                $("#div11").delay(1500).fadeIn(500);
+            }
+            /*第7板相片特效*/
+            function photo7(){
+                $("#div8").fadeOut(500);
+                $("#div9").animate({left:windowClientWidth,opacity:0},500);
+                $("#div10").animate({left:-windowClientWidth*0.8,opacity:0},500);
+                $("#div11").fadeOut(500);
             }
 
         }
