@@ -93,19 +93,21 @@
                 height=windowClientWidth*0.8*0.7+"px";
                 top=0;
                 left=0;
+                zIndex=6;
             }
             with(oDiv[4].children[1].style){
-                width=windowClientWidth*0.8*0.75+"px";
-                height=windowClientWidth*0.8+"px";
-                left=Math.floor(windowClientWidth/2)-Math.floor(windowClientWidth*0.8*0.75/2)+"px";
-                top=Math.floor(windowClientHeight/2)-Math.floor(windowClientWidth*0.8/2)+"px";
-
+                width=windowClientWidth*0.95*0.75+"px";
+                height=windowClientWidth*0.95+"px";
+                left=Math.floor(windowClientWidth/2)-Math.floor(windowClientWidth*0.95*0.75/2)+"px";
+                top=Math.floor(windowClientHeight/2)-Math.floor(windowClientWidth*0.95/2)+"px";
+                zIndex=7;
             }
             with(oDiv[4].children[2].style){
                 width=windowClientWidth*0.8+"px";
                 height=windowClientWidth*0.8*0.7+"px";
                 top=windowClientHeight-(windowClientWidth*0.8*0.7)+"px";
                 left=windowClientWidth-(windowClientWidth*0.8)+"px";
+                zIndex=8;
             }
             /*设置body宽高*/
             oBody.style.width=windowClientWidth+"px";
@@ -284,6 +286,9 @@
             }
             /*第四张相片特效*/
             function photo4(){
+                $("#div5").css({display:none});
+                $("#div6").css({display:none});
+                $("#div7").css({display:none});
                 clearInterval(timer);
                 var w4=120;
                 var h4=160;
@@ -302,7 +307,7 @@
                         lineHeight:h4+"px",
                         border: ""+n4+"px groove white",
                         left:Math.floor(windowClientWidth/2)-Math.floor(w4/2)+"px",
-                        top:Math.floor(windowClientHeight/2)-Math.floor(h4/2)+"px",})
+                        top:Math.floor(windowClientHeight/2)-Math.floor(h4/2)+"px",});
                 },30);
             }
             /*第四板相片特效*/
@@ -312,6 +317,12 @@
                 $("#div7").delay(500).slideDown(500);
 
                 $("#div6").delay(1000).fadeIn(1500);
+            }
+            /*第5板相片特效*/
+            function photo6(){
+                $("#div5").css({display:none});
+                $("#div6").css({display:none});
+                $("#div7").css({display:none});
             }
 
         }
