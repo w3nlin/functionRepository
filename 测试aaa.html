@@ -159,7 +159,7 @@
                     var e=event.changedTouches[0]||window.event;
                     endY=e.clientY;
                     if(endY<startY){
-                        if(j==oDiv.length-1){
+                        if(this.index==oDiv.length-1){
                             alert("已经不能再向上滑动了");
                             return;
                         }
@@ -168,7 +168,7 @@
                         oDiv[this.index+1].style.top=0+"px";
                     }
                     if(endY>startY){
-                        if(j==0){
+                        if(this.index==0){
                             alert("已经不能再向下滑动了");
                             return;
                         }
