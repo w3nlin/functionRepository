@@ -78,6 +78,10 @@
             for(var i=0;i<oDiv.length;i++){
                 oDiv[i].style.width=windowClientWidth+"px";
                 oDiv[i].style.height=windowClientHeight+"px";
+                oDiv[i].style.opacity=0.5;
+                oDiv[i].style.position="absolute";
+                oDiv[i].style.top=0;
+                oDiv[i].style.left=0;
                 oDiv[i].index=i;
                 oDiv[i].addEventListener("touchstart",function(event){
                     var e=event.touches[0]||window.event;
